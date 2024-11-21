@@ -1,0 +1,471 @@
+@font-face {
+    font-family: "Pretendard Variable";
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: local(※),
+        url("https://www.highlightsreading.com/public/resource/fonts/PretendardVariable.woff2") format("woff2-variations");
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    letter-spacing: -0.025em;
+    font-family: "Pretendard Variable";
+    line-height: 1;
+}
+
+html,
+body {
+    color: var(--color-font);
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+img,
+video {
+    display: block;
+    object-fit: contain;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.btn-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+
+    animation-name: bgAni-re;
+    animation-fill-mode: both;
+    animation-duration: 0.8s;
+    opacity: 0;
+}
+
+.btn {
+    position: relative;
+    flex-shrink: 0;
+    width: calc((100% - 32px) / 2);
+    max-width: 474px;
+    padding: 36px;
+    border-radius: 40px;
+    border: 0;
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px #FF5655;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    background-color: #FFF6F6;
+}
+
+.btn>p {
+    margin-bottom: 60px;
+    font-family: 'GmarketSansMedium';
+    font-size: 3.2rem;
+    color: #3D3D3D;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.btn .images {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    transition: 0.3s;
+}
+
+.btn:hover .images {
+    bottom: 38px;
+    transform: scale(1.05);
+}
+
+.wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#FF5F5E 0%, #FF5F5E 70%, #FF3052 100%);
+}
+
+.wrap::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    padding-top: 13%;
+    background-image: url(../images/bg_bottom.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.con {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1600;
+    padding: 100px;
+    z-index: 10;
+}
+
+.logo {
+    margin-bottom: 64px;
+}
+
+.title {
+    margin-bottom: 80px;
+    animation-name: bgAni-re;
+    animation-fill-mode: both;
+    animation-duration: 0.8s;
+    opacity: 0;
+}
+
+.title p,
+.title span {
+    text-align: center;
+    font-size: 4.2rem;
+    font-family: "GmarketSansMedium";
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.title p:last-child,
+.title p:last-child span {
+    font-size: 8.4rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.title p:last-child span {
+    color: #FFF8A7;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg>img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation-name: bgAni;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    opacity: 0;
+}
+
+.chara {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    animation-name: chara-ani;
+    animation-fill-mode: both;
+    animation-duration: 2s;
+    opacity: 0;
+}
+
+.chara img {
+    position: absolute;
+    bottom: 0;
+    width: 416px;
+    height: 500px;
+    object-fit: inherit;
+    transform-origin: bottom;
+
+    animation-name: chara-img-ani;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+
+.chara img:nth-child(2) {
+    right: 0;
+    animation-delay: 1.5s;
+}
+
+.bg>img:nth-child(2) {
+    animation-delay: 0.2s;
+    animation-duration: 1.2s;
+}
+
+.bg>img:nth-child(3) {
+    animation-delay: 0.3s;
+    animation-duration: 1.4s;
+}
+
+@keyframes bgAni {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes bgAni-re {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes chara-ani {
+    0% {
+        transform: translateY(100px) scale(0.95);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(10px) scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(40px) scale(1);
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(10px) scale(1);
+        opacity: 1;
+    }
+
+    90% {
+        transform: translateY(20px) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(10px) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes chara-img-ani {
+    0% {
+        transform: rotate(0);
+    }
+
+    33% {
+        transform: rotate(3deg);
+    }
+
+    66% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@media screen and (max-width : 1600px) {
+    .con {
+        padding: 50px;
+    }
+
+    .logo {
+        margin-bottom: 36px;
+    }
+
+    .title {
+        margin-bottom: 54px;
+    }
+
+    .title p,
+    .title span {
+        font-size: 3.6rem;
+    }
+
+    .title p:last-child,
+    .title p:last-child span {
+        font-size: 5.4rem;
+    }
+
+    .btn-wrap {
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    .btn {
+        padding: 24px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px #FF5655;
+    }
+
+    .btn>p {
+        margin-bottom: 36px;
+        font-size: 2.4rem;
+    }
+
+    .chara img {
+        width: 333px;
+        height: 400px;
+    }
+
+    .chara img:nth-child(1) {
+        left: -100px;
+    }
+
+    .chara img:nth-child(2) {
+        right: -100px;
+    }
+}
+
+@media screen and (max-width : 1280px) {
+    .bg>img {
+        height: auto;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .con {
+        height: 100%;
+        padding: 50px;
+    }
+
+    .logo {
+        margin-bottom: 54px;
+    }
+
+    .title p,
+    .title span {
+        font-size: 2.4rem;
+    }
+
+    .title p:last-child,
+    .title p:last-child span {
+        font-size: 3.6rem;
+    }
+
+    .btn-wrap {
+        flex-direction: column;
+    }
+
+    .btn .images{
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: inherit;
+    }
+
+    .btn>p br {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .bg>img {
+        top: 30%;
+    }
+
+    .con {
+        padding: 15px;
+    }
+
+    .chara img {
+        width: 125px;
+        height: 150px;
+    }
+
+    .chara img:nth-child(1) {
+        left: 0;
+    }
+
+    .chara img:nth-child(2) {
+        right: 0;
+    }
+
+    .btn-wrap {
+        margin-bottom: 36px;
+    }
+
+    .chara img {
+        bottom: 50%;
+    }
+}
+
+@media screen and (max-width : 420px) {
+    .bg>img{
+        top: 20%;
+    }
+
+    .title p,
+    .title span {
+        word-break: keep-all;
+        font-size: 1.8rem;
+        text-shadow: 0px 0px 10px #D20023;
+    }
+
+    .title p:last-child,
+    .title p:last-child span {
+        font-size: 2.8rem;
+    }
+
+    .btn{
+        padding: 18px;
+    }
+
+    .btn>p{
+        margin-bottom: 24px;
+        font-size: 1.6rem;
+    }
+
+    .btn img:not(.images){
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn .images{
+        height: 108px;
+    }
+
+    .chara img{
+        bottom: 38%;
+    }
+}
